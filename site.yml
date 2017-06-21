@@ -1,0 +1,12 @@
+---
+- name: Ansible Project
+  hosts: servers
+  remote_user: root
+  sudo: yes
+
+  roles:
+    - upgrade
+    - common
+    - apache
+    - webapp
+    - db

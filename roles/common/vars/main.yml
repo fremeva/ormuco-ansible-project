@@ -1,0 +1,7 @@
+common_packages:
+  - git
+  - python-pip
+  - python-dev
+  - python-psycopg2
+  - python-virtualenv
+  - sqlite3

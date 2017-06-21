@@ -1,0 +1,9 @@
+---
+# Variables listed here are applicable to all host groups
+
+server_name: 104.131.191.73
+root_app_path: /var/www/flaskApp/
+app_path: /var/www/flaskApp/flaskapp/
+
+repository: https://github.com/fremeva/flaskApp.git
+

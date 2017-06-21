@@ -1,0 +1,35 @@
+---
+- name: Copy the code flaskApp from repository
+  git:
+    repo: '{{repository}}'
+    dest: '{{root_app_path}}'
+
+- name: Install pip requirements
+  pip:
+    requirements: '{{ app_path }}requirements.txt'
+    virtualenv: '/venv'
+
+- name: Creating the .wsgi file in the project root
+  template: src=flaskapp.wsgi.j2 dest={{wsgi_file_path}}
+
+- name: Migration Init (Run script manage.py)
+  command: python manage.py db init
+  args:
+    chdir: '{{app_path}}'
+
+- name: Migration Migrate (Run script manage.py)
+  command: python manage.py db migrate
+  args:
+    chdir: '{{app_path}}'
+
+- name: Migration Upgrade (Run script manage.py)
+  command: python manage.py db upgrade
+  args:
+    chdir: '{{app_path}}'
+
+- name: Migration Upgrade (Run script manage.py)
+  command: python manage.py db upgrade
+  args:
+    chdir: '{{app_path}}'
+  notify: restart apache
+

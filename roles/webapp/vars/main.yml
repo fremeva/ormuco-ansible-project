@@ -1,0 +1,1 @@
+wsgi_file_path: /var/www/flaskApp/flaskapp.wsgi

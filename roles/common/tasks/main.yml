@@ -1,0 +1,4 @@
+---
+- name: Installing common packages
+  apt: pkg={{ item }} update-cache=yes
+  with_items: "{{ common_packages }}"

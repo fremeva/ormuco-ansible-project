@@ -1,0 +1,16 @@
+---
+- name: Installing apache packages
+  apt: pkg={{ item }} update-cache=yes
+  with_items: "{{ apache_packages }}"
+
+- name: Enable mod_wsgi - Apache
+  apache2_module:
+    state: present
+    name: wsgi
+
+- name: Configure and Enable a New Virtual Host
+  template: src=flaskApp.conf.j2 dest={{virtual_host_config_path}}
+  notify: restart apache
+
+- name: Enable the virtual host
+  command: a2ensite flaskApp
