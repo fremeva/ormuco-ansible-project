@@ -7,7 +7,6 @@
 - name: Install pip requirements
   pip:
     requirements: '{{ app_path }}requirements.txt'
-    virtualenv: '/venv'
 
 - name: Creating the .wsgi file in the project root
   template: src=flaskapp.wsgi.j2 dest={{wsgi_file_path}}

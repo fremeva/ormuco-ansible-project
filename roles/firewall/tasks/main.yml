@@ -1,0 +1,19 @@
+---
+- name: Installing Firewall Packages
+  apt: pkg={{ item }} update-cache=yes
+  with_items: "{{ firewall_packages }}"
+
+- name: Enable ufw
+  ufw: state=enabled policy=allow
+
+- name: Enable SSH
+  ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+
+- name: 80 is open
+  ufw: rule=allow port=80 proto=tcp
+
+- name: 443 is open
+  ufw: rule=allow port=443 proto=tcp

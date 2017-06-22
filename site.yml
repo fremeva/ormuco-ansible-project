@@ -5,7 +5,9 @@
   sudo: yes
 
   roles:
+    - init
     - upgrade
+    - firewall
     - common
     - apache
     - webapp
