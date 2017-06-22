@@ -39,7 +39,7 @@ Now copy the ssh-key generated to your host by typing the following command:
 
 **Nota:** If you have n servers. You should do this n times 
 
-### 3. clone
+### 3. clone repository
 
 Now, we clone the project be typing the following command:
 
@@ -98,7 +98,9 @@ Enter to browser:
  ## Demos
  
  [Server1:138.197.88.200 ](138.197.88.200)
+ 
  [Server2:138.197.92.242](138.197.92.242)
+ 
  [Server3:45.55.151.246](45.55.151.246)
  
  
