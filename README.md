@@ -1,6 +1,9 @@
 # ormuco-ansible-project
 
+
 **ormuco-ansible-project** uses Ansible to deploy in a one or multiples servers, a the app developed on Flask framework and Sqlite3 (The repository can be found [here](https://github.com/fremeva/ormuco-flask-app.git)).
+
+
 
 **NOTE:** This tutorial is based on the implementation on ubuntu servers 14.04. If you want to run the ansible workbook in another distribution, make sure you have python2 installed on the machine
 
